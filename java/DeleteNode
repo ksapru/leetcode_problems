@@ -1,0 +1,9 @@
+class Solution {
+    public void deleteNode(ListNode node)  {
+          node.val = node.next.val; //storing value of next node in current node.
+          node.next = node.next.next;// **unexplained**.  the next of this node will point to next of the current node's next.
+        
+       
+        
+    }
+} 
