@@ -1,0 +1,20 @@
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+ 
+        ListNode newd = head; // creating a new node to remove the duplicates and handle the remainder of the operations 
+        while (newd != null && newd.next != null) {
+            if (newd.next.val == newd.val) {
+                newd.next = newd.next.next; // deletes the node 
+                
+            }
+            
+           else {
+                newd = newd.next; // if there are no duplicates 
+            }
+        }
+        
+        return head; // returns initial head 
+        
+
+    }
+}
