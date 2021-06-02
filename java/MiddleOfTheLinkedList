@@ -1,15 +1,15 @@
 class Solution {
     public ListNode middleNode(ListNode head) {
         
-        ListNode slow = head;
+        ListNode slow = head; // setting the two pointers 
         ListNode fast = head;
         
-        while ( fast != null && fast.next != null ) {
+        while ( fast != null && fast.next != null ) { // testing if the first and second node in either is null
             slow = slow.next;
-            fast = fast.next.next;
+            fast = fast.next.next; // two pointer set up and where they meet
         }
     
-        return slow;
+        return slow; // return the first one because that's the one that actually contains the information
     }
 }
 
