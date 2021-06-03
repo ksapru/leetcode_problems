@@ -14,20 +14,21 @@ class Solution {
         while (l1 != null && l2 != null) {
           
             if (l1.val < l2.val) {
-                trav.next = l1;
-                l1 = l1.next;// takes first element from the first list
-         } 
+                trav.next = l1; // takes first element of first list and puts it in trav
+                l1 = l1.next; // continues loop 
             else {
-                trav.next = l2;
-                l2 = l2.next;
+                trav.next = l2; // takes second element of the second list and puts it in trav
+                l2 = l2.next; // continues loop
             }
             
-            trav = trav.next;
+            trav = trav.next; // remainder 
         }
         
+        // checking each one induviudally 
+        
         if (l1 != null){
-            trav.next = l1;
-            l1 = l1.next;
+            trav.next = l1; 
+            l1 = l1.next; 
         }
             
         if(l2 != null){
