@@ -1,0 +1,18 @@
+class Solution {
+    public TreeNode invertTree(TreeNode root) {
+          
+        if (root == null) {
+            return null; // check the root node is present 
+        }
+     
+        TreeNode right = invertTree(root.right); // swap nodes that are initially present 
+        TreeNode left = invertTree(root.left);
+        
+        root.left = right; // the child nodes are taken care of with this 
+        root.right = left;
+        
+        return root;       // return tree
+    }
+}
+        
+// An Alternative approach is using iterative by starting with a hash map
