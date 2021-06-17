@@ -1,0 +1,52 @@
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+ 
+ // Iterative solution 
+ 
+ 
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        ListNode prev = null; // set up the previous node 
+        ListNode nextnode = head; // set up the head node 
+        while (nextnode != null) {
+            ListNode othernode = nextnode.next; // set up the next node after head 
+            // it must be in the loop because it will be reversed 
+            nextnode.next = prev; // pointing this back to the null pointer 
+            prev = nextnode; // reversing the second part of the first portion
+            nextnode = othernode; // move on continue sitting together
+        }
+        return prev;
+    }
+}
+        
+        
+        
+
+// Recursive solution
+
+
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        if ( head == null || head.next == null) {
+            return head; // you must return the head of the end of the list after its done
+            
+        }
+        
+        ListNode ini = reverseList(head.next); // full thing goes down
+        head.next.next = head; // reverse because the head.next.next has the secrets
+        head.next = null;
+ 
+        return ini; // return the reverse list this time not the null pointer
+    } 
+
+}
+        
+      
