@@ -1,0 +1,35 @@
+class Solution {
+    public boolean isValid(String s)
+    {
+ 
+         Stack <Character> st = new Stack<>(); // build a new stack 
+        
+        for (int i = 0; i < s.length(); i++) {
+            char parentheses = s.charAt(i); // initialize the first charechter to check bracket to loop over 
+            if (parentheses == '(' || parentheses == '[' || parentheses =='{') 
+            {  // pushing the parentheses in the stack
+                st.push(parentheses) ;    
+            }
+            else if ( st.empty() ) { // empty stack 
+                return false;
+            }
+            else if (parentheses == ')' && st.pop() != '(' ) {
+                return false; // check first and last brackets for each char 
+            }
+                     
+            else if (parentheses == '}' && st.pop() != '{') {
+                return false;
+            }
+                                                             
+            else if (parentheses == ']' && st.pop() != '[') {
+                return false;
+            }
+                                                             
+         
+        }
+           return st.empty(); // just return the stack 
+    }
+}
+//one case where its empty 
+//three case where you need to pop to check for each brackets opposing 
+//one 
