@@ -1,0 +1,46 @@
+class Solution {
+    public List<String> letterCombinations(String digits) {
+        
+         List <String> result = new ArrayList <String>(); // standard 
+         if (digits.length() == 0) {
+            return result; // if the input has nothing return the empty list set above 
+        }
+        
+        
+        String digitletter[] ={
+            "0",
+            "1",
+            "abc",
+            "def",
+            "ghi",
+            "jkl",
+            "mno",
+            "pqrs",
+            "tuv",
+            "wxyz"
+        };  // array to store all diffent combination ot map too 
+
+        
+        letterCombinationsRecursive(digitletter, digits, result, "", 0); 
+        // recursion function magically does all the work 
+        
+        return result; // return the result 
+         
+    }
+    
+    public void letterCombinationsRecursive(String digitletter[], String digits, List <String> result, String current, int index) {
+        
+        if (index == digits.length() ) { // if index is at the number 
+            result.add(current); //must be the current combination using digit  
+            return;               
+        }
+        
+        String letters = digitletter[digits.charAt(index) - '0']; 
+        // new string letters to store the prevoius array without the first number 0 
+        for (int i = 0; i < letters.length(); i++) { 
+        // must include a loop in the question to iterate over the whole string minus 0 
+            letterCombinationsRecursive(digitletter, digits, result, current + letters.charAt(i), index + 1); 
+            // index + 1 to move on and remainder of charAt(i) to be added       
+       }
+    }
+    
