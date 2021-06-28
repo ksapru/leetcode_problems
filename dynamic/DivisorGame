@@ -1,0 +1,14 @@
+class Solution {
+    public boolean divisorGame(int n) {
+        if (n % 2 == 0) {
+            return true;
+        }
+        
+        else {
+            return false;
+    }
+    }
+}
+// Fairly Straightforward use of even and odd to decide divisors 
+// If its an even number it will be true and odd will be false because of the repititive pattern like 3-->2--> false 2-->true
+     
