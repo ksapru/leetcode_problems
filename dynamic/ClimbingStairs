@@ -1,0 +1,24 @@
+class Solution {
+    public int climbStairs(int n) {
+        return climb_Stairs(0, n);
+    }
+    
+ 
+    public int climb_Stairs(int i, int n) {
+                if (i > n) {
+                    return 0;
+                }  // if first pointer is greater return nothing
+       
+    
+                if (i == n) {
+                    return 1;
+                }
+        // if both pointers are equal return 1
+                 
+             
+               return climb_Stairs(i + 1, n) + climb_Stairs(i + 2, n);
+ // first part takes care of the combination of one step and second of two steps 
+    }
+}
+
+// There is an exceptional case of 44 with which this doesn't work with 
