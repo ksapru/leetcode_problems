@@ -1,0 +1,28 @@
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+     int i = 0;
+     int j = 0; // two pointers to be set up: one to the end, one in the beggining 
+     int max = 0; // keep a max 
+
+     HashSet<Character> set1 = new HashSet<>(); // build a hash set for chars since you need to check each chars 
+        
+        while (j < s.length()) {
+            if (!set1.contains(s.charAt(j))) { // check to set if it contains the charechter 
+                set1.add(s.charAt(j++)); //  add the charechter in the hashSet 
+                max = Math.max(max, set1.size()); // need a maximum size for this to be set up 
+            }
+            
+            else { 
+                
+                set1.remove(s.charAt(i++)); // if it is already in the hash set 
+            
+            }
+        }
+        
+        return max;
+        
+        
+        
+        
+    }
+}
