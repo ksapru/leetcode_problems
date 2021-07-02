@@ -1,0 +1,62 @@
+class Solution {
+    public int[] intersection(int[] nums1, int[] nums2) {
+        {
+            HashSet<Integer> set1 = new HashSet<Integer>();
+    for (Integer n : nums1) set1.add(n);
+    HashSet<Integer> set2 = new HashSet<Integer>();
+    for (Integer n : nums2) set2.add(n);
+
+    set1.retainAll(set2);
+
+    int [] output = new int[set1.size()];
+    int idx = 0;
+    for (int s : set1) output[idx++] = s;
+    return output;
+        }
+        
+        // set up two hash ups 
+  // compare with the : operator if n in nums add it 
+ 
+ 
+        
+ // remove all other elements 
+        
+        
+ // set up set size 
+  // index to add to 
+  // compare 
+        
+        
+        
+        
+        // This one does not work it has a small error
+        HashSet <Integer> set1 = new HashSet<Integer>();
+        
+        for (int i : nums1)            {
+            set1.add(i);
+        } 
+        
+        
+        HashSet <Integer> set2 = new HashSet<Integer>();
+        
+        for (int i : nums2)  {
+            if (set1.contains(i))                {
+                set2.add(i);
+                
+            } 
+        }
+            
+        int[] output = new int[set2.size()];
+        int idx = 0;
+        for (int n : set1) {
+            output[idx++] = n;
+        }
+          return output; 
+
+            
+        
+        
+        }
+ 
+    }
+  
