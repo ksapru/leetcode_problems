@@ -1,0 +1,26 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+        
+        // Dynamic Programming question 
+        
+        // for loop to loop through the array to find the lowest price 
+        
+        int max = 0;
+        int min = Integer.MAX_VALUE;
+        
+        for (int i = 0; i < prices.length; i++) {  // go through entire array 
+                if ( prices[i] < min ) { // if the prices your on right now is less than the minimum value in the array 
+                    min = prices[i]; // store the minimum
+                    
+                } 
+            
+                else {
+                    max = Math.max(max, prices[i] - min);
+                    
+                    // get the maximum value you can make based on max and price differene
+                }
+        
+             }  
+        return max; 
+        }
+    }
