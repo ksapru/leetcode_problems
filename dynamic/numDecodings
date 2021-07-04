@@ -1,0 +1,44 @@
+class Solution {
+    public int numDecodings(String s) {
+        
+        // this is not a hash table it is a dynamic programming question 
+        // common dynamic programming question like climbing stairs 
+       
+        
+        int[] dp = new int[s.length() + 1]; // make a dp array. 
+        dp[0] = 1;    // account for the number 0 which is 1 
+        dp[1] = s.charAt(0) == '0' ? 0 : 1; // depends on the value of the first charechter
+        for (int i = 2; i <= s.length(); i++) { 
+            int oneDigit = Integer.valueOf(s.substring(i-1, i));
+            // store the mapping of the first digit that is mapped to the first charechter 
+            
+            // why is it s. // because it takes the string specified above 
+            int secondDigit =  Integer.valueOf(s.substring(i-2, i));
+            // store the mapping of the second digit that is mapped to second charechter 
+            
+            // sub problems are taken care of here 
+            
+            
+                if (oneDigit >= 1) { // if the i - 1 is the greater than or equal to one
+                    dp[i] += dp[i-1];  // add the i+1 to the previous subproblem
+                } // add it 
+            
+                if (secondDigit >= 10 && secondDigit <= 26) {   // add the i+2 to the previous subproblem
+                    dp[i] += dp[i-2];
+                    // add the second case 
+                    // why is the 10 and 26 specifcially used here  
+                    
+                }
+        
+        }
+        
+        return dp[s.length()]; // must always return dp // in this case length cuz youy need the number of the digit 
+         
+    }
+}
+  
+
+
+
+
+
