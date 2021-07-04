@@ -1,3 +1,5 @@
+// A slower solution
+
 class Solution {
     public int climbStairs(int n) {
         return climb_Stairs(0, n);
@@ -22,3 +24,37 @@ class Solution {
 }
 
 // There is an exceptional case of 44 with which this doesn't work with 
+
+
+
+
+
+
+
+// Another solution to solve this using fibonacci or a simple dp method would include a quicker solution and basic base case 
+
+// Time Complexity of O(1)
+
+class Solution {
+    public int climbStairs(int n) {
+        
+        // This is a dp problem
+        // There are two step sizes 1 & 2 
+        // therefore two cases 1 and 2
+        
+        // base case if n is 1 or 0 then it must be n 
+        // subproblem should take care of n-1 and n-2 
+        
+        
+        // base case 
+        
+        if (n <= 2) {
+            return n;
+        }        // takes care of everything which is 2 or before 2 
+        
+        // The remainder of the solution will use the alogrithm specified in the question broken down using a for loop 
+        // what is it supposed to return? return first where first = second + third 
+        // Complete it 
+        
+        
+   
