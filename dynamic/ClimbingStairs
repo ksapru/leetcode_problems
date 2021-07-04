@@ -56,5 +56,40 @@ class Solution {
         // what is it supposed to return? return first where first = second + third 
         // Complete it 
         
+  class Solution {
+    public int climbStairs(int n) {
         
+        // two ways to climb to the top i-1 & i-2 
+        
+        // base case 
+        
+        if (n <= 3) {
+            return n;
+        }
+        
+        // case in which n is greater than the two then we need the number of possibiltiies it can happen 
+        
+        // fibonacci based problem 
+        int first = 1; // first in dp problems is usually set to i-1 or  1 
+        int second = 2; // second in dp problem is usually i -2 o2 
+        
+        // lets assume n is 5 
+ 
+        
+        for (int i = 3; i <= n; i++) {
+           
+            int third = second + first;
+            first = second;  // set first to second
+            second = third; // set second to third pointer 
+        
+        }
+        
+        
+        return second;   // why do we return the second pointer 
+
+        
+    }
+}
+
+// you looked at the leetcode solution for this 
    
