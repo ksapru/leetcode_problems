@@ -39,3 +39,47 @@ class Solution {
         return output.next;
     }
 }
+
+
+
+// A much easier and faster solution to think through 
+
+// This solution involves working with values in the linked lists 
+// The values are used to determine which one is supposed to the next node and returned based on that 
+
+ 
+class Solution {
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        
+        // base case: if one of the listnodes are not there just return the other
+        
+        
+        if (l1 == null) {
+            return l2;
+        }
+        
+        if (l2 == null) {
+        return l1;
+        }
+        
+        // assuming both of them are in fact there we would need to combine both of them
+        // combine both of them --> then return recursively 
+        
+        // depends on which first element is the smallest or largest 
+             
+            // case1 where the l2 could be greater than l1
+            
+        if (l2.val > l1.val) { // {1,2,3} {2,3,4} l2 value greater 
+                l1.next = mergeTwoLists(l2, l1.next); // then l1.next value be the next value of l1 and l2 will be the same 
+                return l1; l1 will start it off
+            }
+            
+            else {
+                l2.next = mergeTwoLists(l2.next, l1); // l2.next value will be the next value of l2 snd l1 and will be the same 
+                return l2; // begin with l2
+            }
+            
+            
+        }        
+    }
+
