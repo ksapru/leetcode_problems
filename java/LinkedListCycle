@@ -1,0 +1,21 @@
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        // this a "classic" two pointer solution 
+        // set up two nodes slow and fast 
+        ListNode slow = head;
+        ListNode fast = head;
+       
+       
+       // write a while loop to check if the nodes are null if null we return false later on 
+        while (fast != null && fast.next != null) {
+            slow = slow.next;   // simple traversal to check if the are equal 
+            fast = fast.next.next;
+      
+        if (slow == fast) { // if they are equal and create a cycle return true 
+            return true;
+        }
+     
+    }
+      return false; // else return false 
+}
+    }
