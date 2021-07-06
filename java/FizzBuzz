@@ -1,0 +1,27 @@
+class Solution {
+    public List<String> fizzBuzz(int n) {
+        List <String> result = new ArrayList <String>(); // build array 
+        
+        for ( int i = 1; i <= n; i++) {. // iterates through all the numbers 
+            if ( i % 3 == 0 && i % 5 == 0) { // checks if both first 
+                result.add("FizzBuzz");  // both cases 
+        }
+        // induvidual cases 
+            else if (i % 5 == 0) {
+                 result.add("Buzz");
+            }
+        
+            else if (i % 3 == 0 ) {
+                 result.add("Fizz");
+         }
+            else {
+                 result.add(Integer.toString(i)); // convert integer to string           
+        }
+            
+        
+        }
+        
+        return result; // return final result 
+        
+    }
+}
