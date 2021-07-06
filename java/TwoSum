@@ -1,0 +1,37 @@
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        // you must use a hash map for this 
+        HashMap <Integer, Integer> Twilio = new HashMap <Integer, Integer>();
+        if (nums == null) {
+            return null;
+        }
+        
+        for (int i = 0; i < nums.length; i++) { 
+            // one loop for the O(n)  
+                 int complement = target - nums[i]; 
+            // used to find the difference and store that element 
+             if (Twilio.containsKey(complement)) {
+                 // if the remaining content is in the key 
+                 
+                return new int[] {Twilio.get(complement), i}; 
+            }
+            
+            Twilio.put(nums[i], i);
+        }
+        
+        throw new IllegalArgumentException("No solution.");
+    }
+}
+
+
+// This has a runtime of 1ms and is the quickest solution with O(n) time complexity 
+
+// Steps
+// HashMap for both the integers
+// After making a hashmap, you write a for loop to go over the elements 
+// going over the loop take another number that stores the difference
+// the difference is used to find the other stuff later
+// dont write another for loop
+// check if the key is contained in the loop if so return new int[] of both the i and the other number you used to store the stuff in
+// put them as nums[i], i
+// throw an exception
