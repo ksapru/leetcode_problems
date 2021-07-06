@@ -1,0 +1,25 @@
+class Solution {
+    public ListNode removeElements(ListNode head, int val) {
+      
+        // 0ms runtime solution 
+        // the reason for this base case is to check if the head is not null
+        // you need this base case if the entire array is filled with one element 
+        
+        while ( head != null && head.val == val) {
+            head = head.next;
+        } 
+          ListNode othernode = head;
+        while ( othernode != null && othernode.next != null ) {
+            if ( othernode.next.val == val) {
+                othernode.next = othernode.next.next;
+                // deletes the node 
+            }
+             else {
+                 othernode = othernode.next;
+           // move right along 
+             }
+        }
+        return head;
+        // classic 
+    }
+}
