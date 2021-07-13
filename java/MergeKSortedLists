@@ -1,0 +1,41 @@
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode mergeKLists(ListNode[] lists) {
+        // need a min heap --> new list from that heap to take all the unsorted lists 
+        
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+        for (ListNode head : lists) {  // if the head is in the lists 
+            while ( head != null ) {
+                minHeap.add(head.val); // add it to the minHeap
+                head = head.next; // continue traversal 
+            }
+        }
+        
+        // new list to add the stuff to 
+        ListNode dummy = new ListNode(-1);
+        ListNode head = dummy; 
+        while (!minHeap.isEmpty()) {
+            head.next = new ListNode(minHeap.remove());
+            head = head.next; 
+        }
+        
+        return dummy.next; // -1+ 1 = 0
+    }
+}
+
+// Steps 
+
+// a heap to sort stuff using a Priority queue
+// check to see if the i are in nums 
+// traverse the list continue traversal add the values 
+// make a dummy node return the next value 
+// if minHeap is not empty continue removing from the previous list 
