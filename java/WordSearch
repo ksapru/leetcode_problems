@@ -1,0 +1,44 @@
+class Solution {
+    public boolean exist(char[][] board, String word) {
+        // go over both directions
+        // a tricky one 
+        // you should look and this and know this is a dfs problem
+        for (int i = 0; i < board.length; i++) {
+            for ( int j = 0; j < board[i].length; j++) {
+                // check if the first charachter in the i, j list matches the word
+                // call the function
+                if (board[i][j] == word.charAt(0) && dfs(board, i, j, 0, word) ) {
+                    return true; 
+                }
+            }
+        }
+        
+        return false;
+    }
+    
+    public boolean dfs(char[][] board, int i , int j, int count, String word) {
+        if ( word.length() == count) {
+            return true;
+        }
+        
+        // check the bounds 
+        if ( i < 0 || j < 0 || i >= board.length || j >= board[i].length || board[i][j] != word.charAt(count)) {
+            return false;
+        }
+        
+        //  trying to search for the other words to check if they are in the i or j range 
+        // new variable to store the board 
+        char temp = board[i][j];
+        board[i][j] = ' ';
+        
+        boolean found = dfs(board, i + 1, j, count + 1, word) 
+            || dfs(board, i - 1, j, count + 1, word) 
+            ||  dfs(board, i, j + 1, count + 1, word)
+            ||  dfs(board, i, j - 1, count + 1, word);
+        
+        board[i][j] = temp;
+        return found;
+        // return this to previous function for it to decide whethern its true or false
+            
+    }
+}
