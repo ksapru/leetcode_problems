@@ -1,0 +1,38 @@
+class Solution {
+    public int findDuplicate(int[] nums) {
+        
+        // this one you wrote has an O(n log n)
+        
+        Arrays.sort(nums);
+        
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] == nums[i+1] ) {
+                return nums[i];
+            }
+        }
+        
+        return 0;
+        
+    }
+    
+    
+    public int findDuplicate(int[] nums) {
+        
+        // this one you wrote has an O(n)
+        // set up a hash set
+        // check if the num in the list
+        // if that is in the num
+        // return num 
+        
+        Set <Integer> newset = new HashSet<Integer>();
+        for (int num : nums) {
+            if (newset.contains(num)) {
+                return num;
+            }
+            
+            newset.add(num);
+        }
+        
+        return -1; 
+    }
+}
