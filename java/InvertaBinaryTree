@@ -2,17 +2,19 @@ class Solution {
     public TreeNode invertTree(TreeNode root) {
           
         if (root == null) {
-            return null; // check the root node is present 
+            return null;   
         }
      
-        TreeNode right = invertTree(root.right); // swap nodes that are initially present 
+        TreeNode right = invertTree(root.right);  
         TreeNode left = invertTree(root.left);
         
-        root.left = right; // the child nodes are taken care of with this 
+        root.left = right;   
         root.right = left;
         
-        return root;       // return tree
+        return root;        
     }
 }
         
-// An Alternative approach is using iterative by starting with a hash map
+ 
+// simple --> set the recursive paths 
+// swap using roots
