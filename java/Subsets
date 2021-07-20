@@ -1,0 +1,22 @@
+class Solution {
+    public List<List<Integer>> subsets(int[] nums) {
+        // obviously need to call a new function beacuse backtracking
+        // set up with a List then call the function
+        List<List<Integer>> subsets = new ArrayList<>();
+        generateSubsets(0, nums, new ArrayList <Integer>() ,subsets);
+        
+        return subsets;
+    }
+    
+    // writing a new function
+    public void generateSubsets(int index, int[] nums, List <Integer> current, List<List<Integer>> subsets) {
+        // add the stuff to the subset 
+        subsets.add(new ArrayList<>(current)); // a copy of current
+        // add the current number 
+        for (int i = index; i < nums.length; i++ ) {
+            current.add(nums[i]);
+            generateSubsets(i + 1, nums, current, subsets);
+            current.remove(current.size() - 1);
+        }
+    }
+}
