@@ -1,0 +1,24 @@
+
+class Solution {
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        
+        // set up the rules for the traversal 
+        
+        //return true if and to continue traversal
+        if (p == null && q == null ) {
+            return true;
+        }
+        // if the stuff isnt in the p and q return false 
+        if (p == null || q == null ) {
+            return false;
+        }
+        
+        // then check for the value 
+        if (p.val != q.val) {
+            return false;
+        }
+         
+        //recurisvely 
+        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+        }
+    }
