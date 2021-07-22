@@ -1,0 +1,25 @@
+class Solution {
+    public String longestWord(String[] words) {
+        
+        Arrays.sort(words); // lexicographically smaller
+        HashSet <String> build = new HashSet();
+        String result = "";
+        for ( String w : words) {
+            if (w.length() == 1 || build.contains(w.substring(0, w.length() - 1))) {
+                if (w.length() > result.length()) 
+                    result = w;
+                    build.add(w);
+         
+                }
+            }
+        
+        return result;
+    
+    }
+}
+
+// steps to the longest word question
+// sort the array
+// build a hash set because it works 
+// check if the string is in words if it contains in substring first to end and the length is 1
+// if the length is greater for the word than the final string result keep adding 
