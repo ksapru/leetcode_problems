@@ -1,0 +1,25 @@
+class Solution {
+    public boolean backspaceCompare(String s, String t) {
+        
+        return build(s).equals(build(t));
+        // to check if its equal or not by calling the other function
+        }
+    
+    public String build(String S) {
+        
+        Stack <Character> result = new Stack<Character>();
+        
+        for (char c : S.toCharArray()){
+            if (c != '#') {
+                result.push(c);
+            }
+            // need to check if result is not empty
+            // if so pop the stack 
+            else if (!result.empty()) {
+                result.pop();
+            }
+        
+        }
+        return String.valueOf(result);
+    }
+}
