@@ -1,0 +1,23 @@
+class Solution {
+    public int maxArea(int[] height) {
+        int a = 0;
+        int b = height.length - 1;
+        
+        int max = Integer.MIN_VALUE;
+        
+        // while they haven't crossed
+        while ( a < b) {
+            int min = Math.min(height[a], height[b]);
+            max = Math.max(max, min * (b - a));
+            if ( height[a] < height[b]) {
+                a++;
+            }
+            
+            else {
+                b--;
+            }
+        }
+        
+        return max;
+    }
+}
