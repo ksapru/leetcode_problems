@@ -1,0 +1,17 @@
+class Solution {
+    public boolean hasPathSum(TreeNode root, int targetSum) {
+       // figure out sum - root.val
+       // base case 
+        if (root == null) {
+            return false;
+        }
+        // check if either of them is null find the sum - root.val yet again see if its zero if its zero its true 
+        else if (root.left == null && root.right == null && targetSum - root.val == 0) {
+            return true;
+        }
+        // recursive function call --> return to check targetSum - root.val
+        else {
+            return  hasPathSum(root.left, targetSum - root.val) || hasPathSum(root.right, targetSum - root.val);
+            }
+    }
+}
