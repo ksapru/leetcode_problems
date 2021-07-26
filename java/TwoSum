@@ -1,22 +1,22 @@
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        // you must use a hash map for this 
-        HashMap <Integer, Integer> Twilio = new HashMap <Integer, Integer>();
+
+        HashMap <Integer, Integer> result = new HashMap <Integer, Integer>();
         if (nums == null) {
             return null;
         }
         
         for (int i = 0; i < nums.length; i++) { 
-            // one loop for the O(n)  
+           
                  int complement = target - nums[i]; 
-            // used to find the difference and store that element 
-             if (Twilio.containsKey(complement)) {
-                 // if the remaining content is in the key 
+             
+             if (result.containsKey(complement)) {
+                
                  
-                return new int[] {Twilio.get(complement), i}; 
+                return new int[] {result.get(complement), i}; 
             }
             
-            Twilio.put(nums[i], i);
+            result.put(nums[i], i);
         }
         
         throw new IllegalArgumentException("No solution.");
