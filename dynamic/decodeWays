@@ -27,6 +27,7 @@ class Solution {
                     dp[i] += dp[i-2];
                     // add the second case 
                     // why is the 10 and 26 specifcially used here  
+                    // becuase 10 is two digits can cancels out two numbers for each letter
                     
                 }
         
