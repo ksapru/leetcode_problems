@@ -1,0 +1,19 @@
+
+class Solution {
+    public int sumOfLeftLeaves(TreeNode root) {
+        
+        if (root == null) {
+            return 0;
+        }
+        
+        else if (root.left != null && root.left.left == null && root.left.right == null) {
+            return root.left.val + sumOfLeftLeaves(root.right);
+            // recursion does not include the val however the other one uses a val      
+        }
+        
+        else {
+            return sumOfLeftLeaves(root.left) + sumOfLeftLeaves(root.right);
+            // generic statements to check all nodes 
+        }
+    }
+}
