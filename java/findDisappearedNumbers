@@ -1,0 +1,26 @@
+class Solution {
+    public List<Integer> findDisappearedNumbers(int[] nums) {
+        
+        
+        ArrayList <Integer> result = new ArrayList <Integer>();
+        HashSet <Integer> number = new HashSet <Integer>();
+        // one array one hashset one to store one to add to and check if it contains 
+        
+  
+        
+        for (int i : nums) {
+            number.add(i);
+        }        
+        
+        
+        for (int i = 1; i <= nums.length; i++)  {
+            if (!number.contains(i)) {
+                result.add(i);
+                
+            }
+        }
+        
+        return result;
+            
+        }
+    }
