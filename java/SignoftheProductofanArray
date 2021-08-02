@@ -1,0 +1,17 @@
+class Solution {
+    public int arraySign(int[] nums) {
+        int count = 1; 
+        
+        for (int c : nums) {
+            if (c < 0) {
+                count = -count;
+            }
+            
+            else if (c == 0) {
+                return 0;
+            }
+        }
+        
+        return count;
+    }
+}
