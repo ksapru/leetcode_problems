@@ -1,0 +1,13 @@
+public static long aVeryBigSum(List<Long> ar) {
+    // Write your code here
+    
+        Long count = 0L; 
+    
+        for (Long c : ar) {
+            count += c;
+        }
+        
+        return count;
+    }   
+
+}
