@@ -1,0 +1,65 @@
+
+    public static String twoStrings(String s1, String s2) {
+    // Write your code here
+        if (s1 == null || s2 == null ) {
+            return "NO";
+        }
+        
+        Set <Character> result = new HashSet<>();
+        Set <Character> bob = new HashSet<>();    
+        
+        
+        char[] res1 = s1.toCharArray();
+        char[] res2 = s2.toCharArray();
+
+
+        // char[] res2 = s1.toCharArray();
+        // char[] res3 = s2.toCharArray();
+        // result.add(res2);
+        // result.add(res3);
+        
+        for (char c : res1) {
+            result.add(c);
+            }
+            
+        for (char c : res2) {
+            bob.add(c);
+            }
+            
+        result.retainAll(bob);
+        
+        
+        if (!result.isEmpty()) {
+            return "YES";
+        }
+        
+        return "NO";
+    }
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int q = Integer.parseInt(bufferedReader.readLine().trim());
+
+        IntStream.range(0, q).forEach(qItr -> {
+            try {
+                String s1 = bufferedReader.readLine();
+
+                String s2 = bufferedReader.readLine();
+
+                String result = Result.twoStrings(s1, s2);
+
+                bufferedWriter.write(result);
+                bufferedWriter.newLine();
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
