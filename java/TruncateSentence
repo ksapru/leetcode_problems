@@ -1,0 +1,20 @@
+class Solution {
+    public String truncateSentence(String s, int k) {
+        // using StringBuilder and split 
+        
+        String[] arr = s.split(" ");
+        StringBuilder sb = new StringBuilder();
+        
+        // use a stringbuilder to cummulate all the strings
+        
+        
+        for (int i = 0; i < k; i++) {
+             sb.append(arr[i] + " ");
+        } // loop for arr[i] to the new stringbuilder 
+        
+        
+        sb.setLength(sb.length() - 1); 
+        return sb.toString();
+        
+    }
+}
