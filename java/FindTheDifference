@@ -1,0 +1,21 @@
+class Solution {
+    public char findTheDifference(String s, String t) {
+        // no hash set needed 
+        
+        // conver to char array, check inside add c subtract t and return the abs number
+        int total = 0; 
+        
+        for (char c : s.toCharArray()) {
+            total += c;
+        }
+        
+        for (char g: t.toCharArray()) {
+            total -= g;
+        }
+        
+        return (char) Math.abs (total);
+        
+        
+        
+    }
+}
