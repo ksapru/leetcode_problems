@@ -1,0 +1,14 @@
+def reverse_nonzero(list):
+    # base case 
+    
+    if len(list) == 0: 
+        return []
+        
+    else:
+    # a for loop to iterate and remove all the occurrences of 0
+        for i in list:
+            if i == 0:
+                list.remove(i)
+    # reverses the list 
+    return [list[-1]] + reverse_nonzero(list[:-1])
+     
