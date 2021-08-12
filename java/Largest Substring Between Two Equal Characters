@@ -1,0 +1,23 @@
+class Solution {
+    public int maxLengthBetweenEqualCharacters(String s) {
+        // convert to chararray
+        // if the one before is equal to the one after break the while loop and return the sum
+        int count = 0;
+        int fianal = -1; 
+        
+        for (int i = 0; i < s.length() - 1; i++) {
+            for (int j = 0; j < s.length(); j++) {
+                if (s.charAt(i) == s.charAt(j)) {
+                    count = j - i - 1;
+                    if (fianal < count) {
+                        fianal = count;
+                    }
+                }
+            }
+        }
+        
+        return fianal; 
+    }
+}
+
+ 
