@@ -1,0 +1,19 @@
+class Solution {
+    public int subarraySum(int[] nums, int k) {
+        // Map<Integer, Integer> result = new HashMap<>();
+        int count = 0 ;
+        
+        
+        for (int i = 0; i < nums.length; i++) {
+            int sum = 0; // check sum in-between 
+            for (int j = i; j < nums.length; j++) {
+                sum += nums[j]; // add sum using the second array
+                if (sum == k) {
+                    count++;
+                }
+            }
+        }
+        
+        return count;
+    }
+}
